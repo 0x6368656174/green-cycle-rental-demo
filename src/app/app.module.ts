@@ -1,16 +1,32 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { ReactiveFormsModule } from '@angular/forms';
+import { BrowserModule } from '@angular/platform-browser';
+
+import { environment } from '../environments/environment';
 
 import { AppComponent } from './app.component';
+import { AppRoutingModule } from './app-routing.module';
+import { HomePageComponent } from './home-page/home-page.component';
+import { TestPageComponent } from './test-page/test-page.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    TestPageComponent,
+    HomePageComponent,
   ],
+  entryComponents: [],
   imports: [
-    BrowserModule
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFirestoreModule,
+    BrowserModule,
+    ReactiveFormsModule,
+    AppRoutingModule,
   ],
-  providers: [],
+  providers: [
+  ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}

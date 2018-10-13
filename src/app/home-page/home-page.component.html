@@ -1,0 +1,5 @@
+<select #select>
+  <option value="{{rentalPoint.id}}" *ngFor="let rentalPoint of rentalPoints$|async">{{rentalPoint.address}}</option>
+</select>
+
+<button (click)="next(select.value)">Перейти к тестированию</button>

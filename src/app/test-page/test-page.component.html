@@ -1,0 +1,7 @@
+<img class="image" *ngIf="locked$|async" src="../../assets/locked.png">
+<img class="image" *ngIf="!(locked$|async)" src="../../assets/unlocked.png">
+
+<div class="text">
+    <span *ngIf="locked$|async">Замок закрыт</span>
+    <span *ngIf="!(locked$|async)">Замок открыт</span>
+</div>
